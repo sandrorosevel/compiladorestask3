@@ -35,6 +35,7 @@ public class Parser {
 
 	public Parser(List<Token> tokens) {
 		this.tokens = tokens;
+
 	}
 
 	//Parsing Expressions 
@@ -62,6 +63,8 @@ public class Parser {
 				this.stack.push(this.id());
 			}
 			this.advance();
+
+
 		}
 		return this.stack.pop();
 	}
@@ -90,6 +93,7 @@ public class Parser {
 	private boolean check(TokenType type) {
 		if (isAtEnd()) return false;
 		return peek().type == type;
+
 	}
 
 	private Token advance() {
@@ -102,6 +106,7 @@ public class Parser {
 	}
 
 	private Token peek() {
+
 		return tokens.get(current);
 	}
 
@@ -109,3 +114,5 @@ public class Parser {
 		return tokens.get(current - 1);
 	}
 }
+
+

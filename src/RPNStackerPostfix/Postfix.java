@@ -90,6 +90,7 @@ public class Postfix {
 			String line = reader.readLine();
 			if (line == null) break;
 			run(line);
+
 			hasError = false;
 		}
 	}
@@ -116,6 +117,7 @@ public class Postfix {
 			// debugging for parsing/ast
 			if(debugging) {
 				printAST(expr);
+
 			}
 			System.out.println(interpreter.interp(expr));
 		} catch (LexError e) {
@@ -151,6 +153,7 @@ public class Postfix {
 	private static void printTokens(List<Token> tokens) {
 		for (Token token : tokens) {
 			System.out.println(token);
+			
 		}
 		System.out.println();
 	}
